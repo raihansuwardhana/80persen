@@ -101,6 +101,8 @@ if st.button("Analysis "):
         cleaned_input = re.sub(r'[' + string.punctuation + ']', ' ', cleaned_input)  # Menghapus tanda baca
         cleaned_input = re.sub(r'\w*\d\w*', '', cleaned_input)  # Menghapus angka
 
+        preprocessed_steps.append("1. Cleaning (Removing URLs, Punctuation, Numbers): " + cleaned_input)
+
         # Langkah 2: Case Folding
         case_folded_input = cleaned_input.lower()
 
