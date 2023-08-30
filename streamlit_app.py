@@ -46,7 +46,7 @@ positive_tweets = twitter_samples.strings('positive_tweets.json')
 negative_tweets = twitter_samples.strings('negative_tweets.json')
 
 # Menggabungkan dataset positif dan negatif
-dataset = [(preprocess(tweet), 'Sentimen Positif') for tweet in positive_tweets] + [(preprocess(tweet), 'Sentimen Negatif') for tweet in negative_tweets]
+dataset = [(preprocess(tweet), 'Sentiment Positive') for tweet in positive_tweets] + [(preprocess(tweet), 'Sentiment Negative') for tweet in negative_tweets]
 
 # Mengacak urutan dataset
 import random
@@ -137,7 +137,7 @@ if st.button("Analysis "):
         st.write("Sentiment Analysis Results:", sentiment)
         
         # Penjelasan mengapa teks terklasifikasikan sebagai sentimen positif atau negatif
-        if sentiment == 'Sentimen Positif':
+        if sentiment == 'Sentiment Positive':
             st.write("Text classified as POSITIVE sentiment.")
             st.write("This may be due to the use of positive words, positive expressions, or a good context.")
         else:
